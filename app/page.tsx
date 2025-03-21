@@ -80,11 +80,11 @@ export default function Home() {
 
   const navItems = [
     { id: "home", label: "Início" },
-    { id: "#about", label: "Sobre" },
+    { id: "about", label: "Sobre" },
     { id: "/departamentos", label: "Departamentos" },
-    { id: "#projects", label: "Projetos" },
-    { id: "#events", label: "Eventos" },
-    { id: "#contact", label: "Contacto" },
+    { id: "projects", label: "Projetos" },
+    { id: "events", label: "Eventos" },
+    { id: "contact", label: "Contacto" },
   ]
 
   const toggleMenu = () => setMenuOpen(!menuOpen)
@@ -135,7 +135,10 @@ export default function Home() {
       >
         <div className="container flex items-center justify-between py-6">
             <Image src="/logo_white.png" alt="FNEE" width={170} height={50} onClick={() => scrollToSection("home")} />
-    <div className="flex items-center gap-4">
+
+
+
+          <div className="flex items-center gap-4">
             <LanguageToggle />
             <button
               onClick={toggleMenu}

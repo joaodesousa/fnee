@@ -35,9 +35,11 @@ export function ContactSection() {
                 <div>
                   <p className="text-white font-medium">Morada</p>
                   <p className="text-white/70">
-                    Rua dos Estudos Europeus, 12
+                    Faculdade Letras da Universidade de Coimbra
                     <br />
-                    1000-123 Lisboa, Portugal
+                    Largo da Porta Férrea
+                    <br />
+                    3000-045 Coimbra
                   </p>
                 </div>
               </div>
@@ -48,7 +50,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <p className="text-white font-medium">Email</p>
-                  <p className="text-white/70">info@fnee.pt</p>
+                  <p className="text-white/70">geral@fnee.pt</p>
                 </div>
               </div>
             </div>

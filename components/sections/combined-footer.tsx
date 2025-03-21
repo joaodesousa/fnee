@@ -295,13 +295,8 @@ export function CombinedFooter({ scrollToSection }: CombinedFooterProps) {
               <Link href="#" className="text-sm text-white/50 hover:text-white transition-colors">
                 Cookies
               </Link>
+              <Image src="/outplay.png" alt="OUTPLAY" height={20} width={80}  />
             </div>
-            <button
-              onClick={() => scrollToSection("home")}
-              className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#FFCC00] hover:text-[#003399] transition-colors"
-            >
-              <ChevronUp size={20} />
-            </button>
           </div>
         </div>
       </div>

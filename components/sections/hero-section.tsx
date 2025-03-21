@@ -183,8 +183,8 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
                   <Calendar size={16} />
                 </div>
                 <div>
-                  <p className="text-white font-medium">Próximo Evento</p>
-                  <p className="text-white/70 text-xs">15 Abril, 2025</p>
+                  <p className="text-white font-medium">ENEE 2025</p>
+                  <p className="text-white/70 text-xs">12 Abril 2025</p>
                 </div>
               </div>
             </motion.div>
