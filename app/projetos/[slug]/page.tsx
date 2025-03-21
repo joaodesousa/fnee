@@ -299,7 +299,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                   <span>Voltar aos projetos</span>
                 </Link>
 
-                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/80 text-sm mb-4">
+                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 ml-4 rounded-full text-white/80 text-sm mb-4">
                   <BookOpen size={14} className="text-[#FFCC00]" />
                   <span>{project.category}</span>
                 </div>
@@ -326,7 +326,7 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>
 
-                  <Button variant="outline" className="border-white/30 text-white hover:bg-white/10">
+                  <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 bg-transparent">
                     <Share2 size={16} className="mr-2" />
                     <span>Partilhar</span>
                   </Button>
@@ -358,8 +358,6 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
             </div>
           </div>
 
-          {/* Bottom Gradient */}
-          <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent"></div>
         </section>
 
         {/* Content Section */}

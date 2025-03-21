@@ -23,17 +23,17 @@ export function ProjectsSection() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white/80 text-sm mb-4">
             <Star size={14} className="text-[#FFCC00]" />
-            <span>Nossos Projetos</span>
+            <span>As nossas notícias</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-white">Iniciativas em destaque</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white">As notícias em destaque</h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <ProjectCard
             title="Inquérito Nacional"
             description="Um dos maiores estudos sobre a percepção dos jovens portugueses em relação à União Europeia."
-            image="/images/project-survey.png"
+            image="/images/academia.png"
             category="Investigação"
             link="#"
           />
@@ -41,7 +41,7 @@ export function ProjectsSection() {
           <ProjectCard
             title="Encontro Nacional"
             description="O maior evento anual dedicado aos estudos europeus em Portugal, reunindo estudantes e especialistas."
-            image="/images/project-conference.png"
+            image="/images/sessao.png"
             category="Eventos"
             link="#"
           />
@@ -49,14 +49,14 @@ export function ProjectsSection() {
           <ProjectCard
             title="Academia Europa"
             description="Programa educativo que leva o conhecimento sobre a União Europeia às escolas de todo o país."
-            image="/images/project-education.png"
+            image="/images/enee.png"
             category="Educação"
             link="#"
           />
         </div>
 
         <div className="mt-12 text-center">
-          <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 group">
+          <Button variant="outline" className="border-white/30 bg-transparent text-white hover:bg-white/10 group">
             <span>Ver todos os projetos</span>
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>

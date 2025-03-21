@@ -61,20 +61,26 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
 
         {/* Glass Panels */}
         <div className="absolute inset-0 grid grid-cols-12 grid-rows-6 gap-4 p-8 opacity-20 pointer-events-none">
-          {Array.from({ length: 12 }).map((_, colIndex) =>
-            Array.from({ length: 6 }).map((_, rowIndex) => (
-              <div
-                key={`${colIndex}-${rowIndex}`}
-                className="border border-white/10 rounded-lg backdrop-blur-sm bg-white/5"
-                style={{
-                  gridColumn: colIndex + 1,
-                  gridRow: rowIndex + 1,
-                  opacity: Math.random() * 0.5 + 0.1,
-                }}
-              />
-            )),
-          )}
-        </div>
+  {Array.from({ length: 12 }).map((_, colIndex) =>
+    Array.from({ length: 6 }).map((_, rowIndex) => {
+      // Use a seeded random based on the position instead of pure random
+      const seed = colIndex * 10 + rowIndex;
+      const opacity = ((seed * 7) % 40 + 10) / 100; // This will give a stable value between 0.1 and 0.5
+      
+      return (
+        <div
+          key={`${colIndex}-${rowIndex}`}
+          className="border border-white/10 rounded-lg backdrop-blur-sm bg-white/5"
+          style={{
+            gridColumn: colIndex + 1,
+            gridRow: rowIndex + 1, 
+            opacity
+          }}
+        />
+      );
+    })
+  )}
+</div>
       </div>
 
       <div className="container relative z-10 pt-24 pb-24">
@@ -127,7 +133,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
               <Button
                 onClick={() => scrollToSection("events")}
                 variant="outline"
-                className="border-white/30 text-white hover:bg-white/10"
+                className="border-white/30 bg-transparent text-white hover:bg-white/10"
               >
                 Próximos Eventos
               </Button>
@@ -145,14 +151,14 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
               <div className="absolute inset-0 rounded-3xl bg-white/5 backdrop-blur-md border border-white/20 shadow-2xl"></div>
               <div className="absolute inset-0 rounded-full bg-[#FFCC00]/20 blur-3xl"></div>
               <div className="relative h-full w-full rounded-3xl overflow-hidden">
-                <Image src="/images/eu-collage.png" alt="Jovens e a União Europeia" fill className="object-cover" />
+                <Image src="/images/enee.png" alt="Jovens e a União Europeia" fill className="object-cover" />
               </div>
               <div className="absolute inset-0 rounded-3xl border border-white/20"></div>
             </div>
 
             {/* Floating Elements - Now with correct z-index */}
             <motion.div
-              className="absolute top-10 -right-10 z-20 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-xl"
+              className="absolute top-10 -right-5 z-20 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 shadow-xl"
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
             >
@@ -190,7 +196,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="absolute bottom-24 left-1/2 -translate-x-1/2 z-10"
+          className="absolute mt-28 left-1/2 -translate-x-1/2 z-10"
         >
           <button
             onClick={() => scrollToSection("about")}
@@ -209,22 +215,6 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
             </motion.div>
           </button>
         </motion.div>
-      </div>
-
-      {/* Improved Section Transition */}
-      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white via-white/90 to-transparent"></div>
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-        <svg
-          className="relative block w-full h-[70px]"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            className="fill-white"
-          ></path>
-        </svg>
       </div>
     </section>
   )

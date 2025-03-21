@@ -33,7 +33,7 @@ export function EventsSection() {
           <EventCard
             title="Percepção dos Jovens sobre a União Europeia"
             description="Workshop interativo para discutir e analisar a visão dos jovens portugueses sobre o projeto europeu."
-            image="/images/event-workshop.png"
+            image="/images/sessao.png"
             date="15 Abril, 2025"
             location="Lisboa, Portugal"
             category="Workshop"
@@ -43,7 +43,7 @@ export function EventsSection() {
           <EventCard
             title="IV Encontro Nacional dos Estudos Europeus"
             description="O maior encontro nacional dedicado aos estudos europeus, com palestrantes nacionais e internacionais."
-            image="/images/event-conference.png"
+            image="/images/enee.png"
             date="22-23 Maio, 2025"
             location="Porto, Portugal"
             category="Conferência"
@@ -53,7 +53,7 @@ export function EventsSection() {
           <EventCard
             title="O Futuro da União Europeia: Desafios e Oportunidades"
             description="Debate sobre as perspectivas futuras da UE e o papel de Portugal no contexto europeu."
-            image="/images/event-debate.png"
+            image="/images/academia.png"
             date="10 Junho, 2025"
             location="Coimbra, Portugal"
             category="Debate"

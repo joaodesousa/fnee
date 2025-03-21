@@ -13,6 +13,8 @@ import { ProjectsSection } from "@/components/sections/projects-section"
 import { EventsSection } from "@/components/sections/events-section"
 import { ContactSection } from "@/components/sections/contact-section"
 import { CombinedFooter } from "@/components/sections/combined-footer"
+import Link from "next/link"
+import Image from "next/image"
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -78,10 +80,11 @@ export default function Home() {
 
   const navItems = [
     { id: "home", label: "Início" },
-    { id: "about", label: "Sobre" },
-    { id: "projects", label: "Projetos" },
-    { id: "events", label: "Eventos" },
-    { id: "contact", label: "Contacto" },
+    { id: "#about", label: "Sobre" },
+    { id: "/departamentos", label: "Departamentos" },
+    { id: "#projects", label: "Projetos" },
+    { id: "#events", label: "Eventos" },
+    { id: "#contact", label: "Contacto" },
   ]
 
   const toggleMenu = () => setMenuOpen(!menuOpen)
@@ -113,7 +116,12 @@ export default function Home() {
             opacity: cursorHidden ? 0 : 1,
             scale: menuOpen ? 1.5 : 1,
           }}
-          transition={{ type: "spring", damping: 30, stiffness: 200 }}
+          transition={{ 
+            x: { duration: 0.1, ease: "linear" }, 
+            y: { duration: 0.1, ease: "linear" },
+            opacity: { duration: 0.2 },
+            scale: { duration: 0.3 }
+          }}
         >
           <div className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center">
             <div className="w-2 h-2 bg-white rounded-full"></div>
@@ -126,30 +134,12 @@ export default function Home() {
         className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${scrolled ? "bg-[#003399]/90 backdrop-blur-md shadow-md" : "bg-transparent"}`}
       >
         <div className="container flex items-center justify-between py-6">
-          <button onClick={() => scrollToSection("home")} className="text-white font-bold text-xl tracking-tight">
-            FNEE
-          </button>
-
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={cn(
-                  "text-white/70 hover:text-white transition-colors text-sm uppercase tracking-wider",
-                  activeSection === item.id && "text-white font-medium",
-                )}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-
-          <div className="flex items-center gap-4">
+            <Image src="/logo_white.png" alt="FNEE" width={170} height={50} onClick={() => scrollToSection("home")} />
+    <div className="flex items-center gap-4">
             <LanguageToggle />
             <button
               onClick={toggleMenu}
-              className="text-white w-10 h-10 flex items-center justify-center"
+              className="text-white w-10 h-10 flex items-center justify-center "
               aria-label={menuOpen ? "Close menu" : "Open menu"}
             >
               {menuOpen ? <X size={24} /> : <Menu size={24} />}

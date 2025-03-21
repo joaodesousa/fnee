@@ -8,7 +8,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt" className="scroll-smooth">
+    <html lang="pt" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <title>FNEE - Federação Nacional dos Estudos Europeus</title>
         <meta
@@ -17,18 +17,10 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        <ThemeProvider attribute="class" defaultTheme="light">
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <div className="relative min-h-screen">{children}</div>
         </ThemeProvider>
       </body>
     </html>
   )
 }
-
-
-
-import './globals.css'
-
-export const metadata = {
-      generator: 'v0.dev'
-    };
