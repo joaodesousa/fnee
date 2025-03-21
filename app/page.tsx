@@ -48,7 +48,7 @@ export default function Home() {
     }
   }, [isMobile])
 
-  // Handle scroll for section detection
+  // Handle scroll for section detection 
   useEffect(() => {
     const handleScroll = () => {
       if (!mainRef.current) return
